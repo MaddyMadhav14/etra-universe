@@ -1,0 +1,302 @@
+.universe-section {
+  background:
+    linear-gradient(
+      180deg,
+      var(--background) 0%,
+      var(--background-soft) 55%,
+      var(--background) 100%
+    );
+}
+
+.universe-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  align-items: end;
+  gap: clamp(40px, 7vw, 110px);
+  margin-bottom: clamp(48px, 7vw, 86px);
+}
+
+.universe-intro {
+  max-width: 560px;
+  justify-self: end;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+}
+
+.world-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 34px);
+}
+
+.world-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(520px, 58vw, 760px);
+  padding: clamp(24px, 3vw, 42px);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  background: var(--surface);
+  isolation: isolate;
+  transition:
+    transform var(--transition-medium),
+    border-color var(--transition-medium),
+    box-shadow var(--transition-medium);
+}
+
+.world-card:hover,
+.world-card:focus-visible {
+  transform: translateY(-8px);
+  border-color: var(--border-strong);
+  outline: none;
+}
+
+.dreams-card:hover,
+.dreams-card:focus-visible {
+  box-shadow: 0 30px 80px rgba(255, 77, 61, 0.13);
+}
+
+.gaming-card:hover,
+.gaming-card:focus-visible {
+  box-shadow: 0 30px 80px rgba(61, 125, 255, 0.15);
+}
+
+.world-card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.02);
+  transition: transform 0.8s ease;
+}
+
+.dreams-card .world-card-bg {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 2, 2, 0.12) 0%,
+      rgba(10, 2, 2, 0.28) 42%,
+      rgba(5, 2, 3, 0.92) 100%
+    ),
+    url("/images/etra-dreams.png");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gaming-card .world-card-bg {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 5, 18, 0.12) 0%,
+      rgba(2, 5, 18, 0.3) 42%,
+      rgba(3, 4, 12, 0.92) 100%
+    ),
+    url("/images/etra-gaming.png");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.world-card:hover .world-card-bg,
+.world-card:focus-visible .world-card-bg {
+  transform: scale(1.08);
+}
+
+.world-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.18) 40%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+}
+
+.world-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.05) 48%,
+      transparent 70%
+    );
+  content: "";
+  opacity: 0;
+  transform: translateX(-50%);
+  transition:
+    opacity var(--transition-medium),
+    transform 0.8s ease;
+}
+
+.world-card:hover::after {
+  opacity: 1;
+  transform: translateX(35%);
+}
+
+.world-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.world-number {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.world-arrow {
+  font-size: 1.6rem;
+  transition: transform var(--transition-fast);
+}
+
+.world-card:hover .world-arrow {
+  transform: translate(4px, -4px);
+}
+
+.world-card-content {
+  max-width: 580px;
+}
+
+.world-category {
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.world-card h3 {
+  margin-bottom: 22px;
+  font-size: clamp(2.2rem, 4.3vw, 5.1rem);
+  font-weight: 500;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.world-description {
+  max-width: 520px;
+  font-size: clamp(0.95rem, 1.25vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.world-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.world-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.world-card:hover .world-link svg {
+  transform: translate(4px, -4px);
+}
+
+.dreams-card .world-category,
+.dreams-card .world-link {
+  color: #ff7a64;
+}
+
+.gaming-card .world-category,
+.gaming-card .world-link {
+  color: #7ca3ff;
+}
+
+@media (max-width: 900px) {
+  .universe-heading {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .universe-intro {
+    justify-self: start;
+  }
+
+  .world-card {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 760px) {
+  .world-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .world-card {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .universe-heading {
+    margin-bottom: 40px;
+  }
+
+  .world-card {
+    min-height: 460px;
+    padding: 24px;
+    border-radius: 6px;
+  }
+
+  .world-card h3 {
+    font-size: clamp(2.3rem, 13vw, 4rem);
+  }
+
+  .world-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .world-card {
+    min-height: 430px;
+  }
+
+  .world-card h3 {
+    font-size: 2.15rem;
+  }
+}
+
+@media (hover: none) {
+  .world-card:hover {
+    transform: none;
+  }
+
+  .world-card::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .world-card,
+  .world-card-bg,
+  .world-arrow,
+  .world-link svg,
+  .world-card::after {
+    transition: none;
+  }
+}

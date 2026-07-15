@@ -1,0 +1,228 @@
+.contact-section {
+  background:
+    linear-gradient(
+      180deg,
+      var(--background-soft) 0%,
+      var(--background) 100%
+    );
+}
+
+.contact-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  min-height: 620px;
+  padding: clamp(34px, 6vw, 88px);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13, 16, 36, 0.94),
+      rgba(3, 4, 10, 0.98)
+    );
+  isolation: isolate;
+}
+
+.contact-panel::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 64px 64px;
+  content: "";
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 95%);
+  mask-image: linear-gradient(to bottom, black, transparent 95%);
+}
+
+.contact-content {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+}
+
+.contact-title {
+  max-width: 1050px;
+  font-size: clamp(3rem, 8vw, 8.6rem);
+  font-weight: 500;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.contact-title span {
+  display: block;
+  color: transparent;
+  background: linear-gradient(
+    100deg,
+    #ffffff 10%,
+    #8c95c8 48%,
+    #6670ff 94%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.contact-description {
+  max-width: 660px;
+  margin-top: clamp(26px, 4vw, 42px);
+  font-size: clamp(1rem, 1.5vw, 1.16rem);
+  line-height: 1.78;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.contact-actions .btn {
+  gap: 12px;
+}
+
+.contact-actions .btn svg {
+  transition: transform var(--transition-fast);
+}
+
+.contact-actions .btn:hover svg {
+  transform: translate(4px, -4px);
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  word-break: break-word;
+  transition: color var(--transition-fast);
+}
+
+.contact-email:hover {
+  color: var(--text-primary);
+}
+
+.contact-side {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  padding-bottom: 4px;
+  color: var(--text-muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.contact-glow {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.contact-glow-one {
+  top: -10%;
+  right: 8%;
+  width: 320px;
+  height: 320px;
+  background: var(--accent-primary);
+}
+
+.contact-glow-two {
+  bottom: -20%;
+  left: 5%;
+  width: 260px;
+  height: 260px;
+  background: var(--accent-secondary);
+}
+
+@supports not (filter: blur(100px)) {
+  .contact-glow {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-panel {
+    grid-template-columns: 1fr;
+    min-height: 560px;
+  }
+
+  .contact-side {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-panel {
+    min-height: 520px;
+    padding: 28px 22px;
+    border-radius: 6px;
+  }
+
+  .contact-title {
+    font-size: clamp(2.8rem, 14vw, 4.7rem);
+  }
+
+  .contact-description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+
+  .contact-email {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-panel::before {
+    background-size: 46px 46px;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-title {
+    font-size: 2.55rem;
+  }
+
+  .contact-email {
+    font-size: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-actions .btn svg,
+  .contact-email {
+    transition: none;
+  }
+}
