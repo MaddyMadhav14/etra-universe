@@ -1,15 +1,16 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import UniverseCards from "@/components/UniverseCards";
-import Strengths from "@/components/Strengths";
 import About from "@/components/About";
 import ContactCTA from "@/components/ContactCTA";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
     <>
+      <ScrollReveal />
       <Header />
 
       <main>
@@ -17,10 +18,6 @@ export default function Home() {
 
         <Reveal>
           <UniverseCards />
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <Strengths />
         </Reveal>
 
         <Reveal delay={0.05}>

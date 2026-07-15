@@ -24,12 +24,14 @@ export default function About() {
           <div className="about-visual-bg" aria-hidden="true" />
 
           <div className="about-visual-content">
-            <span className="about-visual-label">ETRA Universe</span>
+            <span className="about-visual-label">
+  Welcome to ETRA World
+</span>
 
             <h3>
-              Built by artists.
-              <span>Powered by technology.</span>
-            </h3>
+  Dream.
+  <span>Create. Inspire.</span>
+</h3>
           </div>
 
           <div className="about-orbit about-orbit-one" aria-hidden="true" />
@@ -37,25 +39,27 @@ export default function About() {
         </div>
 
         <div className="about-content">
-          <p className="section-label">About ETRA Universe</p>
+          <p className="section-label">
+  About ETRA Dreams
+</p>
 
-          <h2 className="about-title">
-            One Team.
-            <span>Infinite Possibilities.</span>
-          </h2>
+        <h2 className="about-title">
+  Turning
+  <span>Dreams Into Reality.</span>
+</h2>
 
           <div className="about-copy">
             <p>
-              ETRA Universe brings together artists, designers, developers and
-              technologists to create powerful visual experiences across film,
-              gaming, animation and interactive media.
-            </p>
+    ETRA Dreams is a creative studio focused on transforming bold ideas into
+    immersive digital experiences through design, storytelling and innovation.
+  </p>
+
 
             <p>
-              Through ETRA Dreams and ETRA Gaming, we combine cinematic
-              storytelling with technology-driven creativity to build
-              experiences that connect, engage and inspire.
-            </p>
+    From visual effects and animation to gaming and interactive media, we
+    create experiences that inspire audiences and shape the future of digital
+    entertainment.
+  </p>
           </div>
 
           <div className="about-stats">
@@ -68,7 +72,7 @@ export default function About() {
           </div>
 
           <a href="#contact" className="about-link">
-            Start a Conversation
+           Let s Build Together
             <FiArrowUpRight aria-hidden="true" />
           </a>
         </div>

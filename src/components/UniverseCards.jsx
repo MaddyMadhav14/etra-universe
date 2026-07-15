@@ -4,7 +4,7 @@ import "../styles/universe.css";
 const worlds = [
   {
     id: "01",
-    name: "ETRA DREAMS",
+    name: "ETRA VFX",
     category: "Film • Television • Visual Effects",
     description:
       "Crafting cinematic visual effects, rotoscopy, paint, prep and matchmove solutions for film and television productions.",
@@ -13,7 +13,7 @@ const worlds = [
   },
   {
     id: "02",
-    name: "ETRA GAMING",
+     name: "ETRA GAMING & ANIMATIONS",
     category: "Games • Animation • Interactive Experiences",
     description:
       "Building immersive games, animation, CGI and interactive digital experiences that push imagination beyond limits.",
@@ -29,12 +29,11 @@ export default function UniverseCards() {
         <div className="universe-heading">
           <div>
             <p className="section-label">Our Universe</p>
-            <h2 className="section-title">Choose Your World</h2>
+            <h2 className="section-title">Explore Our Creative Worlds</h2>
           </div>
 
           <p className="universe-intro">
-            Two creative divisions. One shared vision. Explore the worlds of
-            cinematic visual effects and immersive gaming experiences.
+            Discover ETRA VFX and ETRA Gaming & Animations, where creativity, technology and storytelling come together to build unforgettable digital experiences.
           </p>
         </div>
 

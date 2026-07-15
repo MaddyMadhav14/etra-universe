@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { FiArrowDownRight } from "react-icons/fi";
+
 import "../styles/hero.css";
 
 export default function Hero() {
@@ -14,28 +13,17 @@ export default function Hero() {
 
       <div className="container hero-inner">
         <div className="hero-content">
-          <p className="hero-eyebrow">Welcome to ETRA Universe</p>
+          <p className="hero-eyebrow">Welcome to ETRA World</p>
 
           <h1 className="hero-title">
-            One Universe.
+            One World.
             <span>Infinite Creativity.</span>
           </h1>
 
           <p className="hero-description">
             From cinematic visual effects to immersive gaming experiences, we
-            create, innovate and inspire across two powerful creative worlds.
+            create, innovate and inspire across powerful creative worlds.
           </p>
-
-          <div className="hero-actions">
-            <Link href="#universe" className="btn btn-primary">
-              Explore Our Universe
-              <FiArrowDownRight aria-hidden="true" />
-            </Link>
-
-            <Link href="#contact" className="btn btn-secondary">
-              Get in Touch
-            </Link>
-          </div>
         </div>
 
         <div className="hero-meta">

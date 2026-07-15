@@ -1,9 +1,21 @@
 .contact-section {
+  position: relative;
+  overflow: hidden;
   background:
+    radial-gradient(
+      circle at 12% 22%,
+      rgba(255, 87, 169, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(255, 188, 220, 0.22),
+      transparent 34%
+    ),
     linear-gradient(
       180deg,
-      var(--background-soft) 0%,
-      var(--background) 100%
+      #ffffff 0%,
+      #fff7fb 100%
     );
 }
 
@@ -15,14 +27,22 @@
   min-height: 620px;
   padding: clamp(34px, 6vw, 88px);
   overflow: hidden;
-  border: 1px solid var(--border-soft);
-  border-radius: 10px;
+  border: 1px solid rgba(236, 0, 104, 0.14);
+  border-radius: 32px;
   background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 255, 255, 0.92),
+      transparent 30%
+    ),
     linear-gradient(
       145deg,
-      rgba(13, 16, 36, 0.94),
-      rgba(3, 4, 10, 0.98)
+      rgba(255, 255, 255, 0.94),
+      rgba(255, 237, 246, 0.98)
     );
+  box-shadow:
+    0 35px 90px rgba(205, 0, 91, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   isolation: isolate;
 }
 
@@ -32,12 +52,12 @@
   z-index: -2;
   background:
     linear-gradient(
-      rgba(255, 255, 255, 0.025) 1px,
+      rgba(236, 0, 104, 0.045) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.025) 1px,
+      rgba(236, 0, 104, 0.045) 1px,
       transparent 1px
     );
   background-size: 64px 64px;
@@ -46,17 +66,36 @@
   mask-image: linear-gradient(to bottom, black, transparent 95%);
 }
 
+.contact-panel::after {
+  position: absolute;
+  top: -18%;
+  right: -8%;
+  z-index: -1;
+  width: min(42vw, 560px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(236, 0, 104, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.34);
+  content: "";
+}
+
 .contact-content {
   position: relative;
   z-index: 2;
   max-width: 950px;
 }
 
+.contact-content .section-label {
+  color: #df0064;
+}
+
 .contact-title {
   max-width: 1050px;
+  color: #181218;
   font-size: clamp(3rem, 8vw, 8.6rem);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 0.9;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
 }
 
@@ -65,9 +104,9 @@
   color: transparent;
   background: linear-gradient(
     100deg,
-    #ffffff 10%,
-    #8c95c8 48%,
-    #6670ff 94%
+    #e60067 0%,
+    #ff3899 48%,
+    #ff82be 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -76,6 +115,7 @@
 .contact-description {
   max-width: 660px;
   margin-top: clamp(26px, 4vw, 42px);
+  color: #685b64;
   font-size: clamp(1rem, 1.5vw, 1.16rem);
   line-height: 1.78;
 }
@@ -90,6 +130,20 @@
 
 .contact-actions .btn {
   gap: 12px;
+  min-height: 54px;
+  padding-inline: 26px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #e80068 0%, #ff459f 100%);
+  box-shadow: 0 14px 34px rgba(232, 0, 104, 0.22);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.contact-actions .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 42px rgba(232, 0, 104, 0.3);
 }
 
 .contact-actions .btn svg {
@@ -104,16 +158,24 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--text-secondary);
+  color: #7b6975;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   word-break: break-word;
-  transition: color var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.contact-email svg {
+  color: #e60067;
+  font-size: 1.05rem;
 }
 
 .contact-email:hover {
-  color: var(--text-primary);
+  color: #e60067;
+  transform: translateY(-2px);
 }
 
 .contact-side {
@@ -124,11 +186,20 @@
   align-items: flex-end;
   gap: 12px;
   padding-bottom: 4px;
-  color: var(--text-muted);
+  color: #b00053;
   font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-weight: 800;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+.contact-side span {
+  padding: 9px 13px;
+  border: 1px solid rgba(236, 0, 104, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .contact-glow {
@@ -136,7 +207,7 @@
   z-index: -1;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.32;
+  opacity: 0.34;
   pointer-events: none;
 }
 
@@ -145,7 +216,7 @@
   right: 8%;
   width: 320px;
   height: 320px;
-  background: var(--accent-primary);
+  background: rgba(255, 24, 130, 0.34);
 }
 
 .contact-glow-two {
@@ -153,12 +224,13 @@
   left: 5%;
   width: 260px;
   height: 260px;
-  background: var(--accent-secondary);
+  background: rgba(255, 135, 190, 0.38);
 }
 
 @supports not (filter: blur(100px)) {
   .contact-glow {
-    display: none;
+    opacity: 0.18;
+    filter: none;
   }
 }
 
@@ -176,8 +248,8 @@
 @media (max-width: 600px) {
   .contact-panel {
     min-height: 520px;
-    padding: 28px 22px;
-    border-radius: 6px;
+    padding: 30px 22px;
+    border-radius: 22px;
   }
 
   .contact-title {
@@ -208,6 +280,12 @@
   .contact-panel::before {
     background-size: 46px 46px;
   }
+
+  .contact-panel::after {
+    top: -6%;
+    right: -48%;
+    width: 105vw;
+  }
 }
 
 @media (max-width: 380px) {
@@ -220,7 +298,14 @@
   }
 }
 
+@supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+  .contact-side span {
+    background: rgba(255, 255, 255, 0.94);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .contact-actions .btn,
   .contact-actions .btn svg,
   .contact-email {
     transition: none;
